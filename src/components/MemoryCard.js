@@ -1,7 +1,8 @@
 import React from 'react';
+import './MemoryCard.css';
 
 const MemoryCard = (props) => {
-  return <h2>This card works !</h2>;
+  return <div className="memory-card">This card works !</div>;
 };
 
 export { MemoryCard };

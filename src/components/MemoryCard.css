@@ -1,0 +1,7 @@
+.memory-card {
+    width: 15rem;
+    height: 20rem;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    border-radius:  0.4rem;
+}
