@@ -8,7 +8,6 @@ const App = (props) => {
   return (
     <div>
       <h1>App Works ! and</h1>
-      <MemoryCard />
       <MemoryCardContainer />
       <Notifications />
       <Score />

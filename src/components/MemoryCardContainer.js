@@ -1,7 +1,27 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { MemoryCard } from './MemoryCard';
+import './MemoryCardContainer.css';
 const MemoryCardContainer = () => {
-  return <div>This is a container of cards.</div>;
+  const [cards, setCards] = useState([]);
+
+  const shuffle = () => {
+    setCards((prevCards) => {
+      return [...prevCards];
+    });
+  };
+
+  return (
+    <div className="memory-card-container">
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+      <MemoryCard />
+    </div>
+  );
 };
 
 export { MemoryCardContainer };
