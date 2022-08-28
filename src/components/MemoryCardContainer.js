@@ -6,16 +6,19 @@ import _ from 'lodash';
 const MemoryCardContainer = () => {
   const CARDS_COUNT = 12;
   const [cards, setCards] = useState([]);
-
-  const handleClick = () => {
-    console.log('card has been clicked');
-  };
+  const [mousePosition, setMousePosition] = useState([0, 0]);
 
   const shuffle = () => {
+    setMousePosition([window.scrollX, window.scrollY]);
     setCards((prevCards) => {
       return _.shuffle(prevCards);
     });
   };
+
+  useEffect(() => {
+    let [x, y] = mousePosition;
+    window.scrollTo(x, y);
+  }, [mousePosition]);
 
   useEffect(() => {
     let initial_cards = [];
