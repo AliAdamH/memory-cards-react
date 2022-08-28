@@ -12,8 +12,8 @@ const Score = (props) => {
         gap: '1rem',
       }}
     >
-      <span>Streak: 1</span>
-      <span>Wins: 3</span>
+      <span>Streak: {props.value}</span>
+      <span>Wins: {props.roundnum}</span>
     </div>
   );
 };
