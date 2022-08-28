@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MemoryCard } from './MemoryCard';
 import './MemoryCardContainer.css';
 const MemoryCardContainer = () => {
+  const CARDS_COUNT = 12;
   const [cards, setCards] = useState([]);
+
+  const handleClick = () => {
+    console.log('card has been clicked');
+  };
 
   const shuffle = () => {
     setCards((prevCards) => {
@@ -10,18 +15,15 @@ const MemoryCardContainer = () => {
     });
   };
 
-  return (
-    <div className="memory-card-container">
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-      <MemoryCard />
-    </div>
-  );
+  useEffect(() => {
+    let initial_cards = [];
+    for (let i = 0; i < CARDS_COUNT; i++) {
+      initial_cards.push(<MemoryCard key={i} onCardClick={handleClick} />);
+    }
+    setCards(initial_cards);
+  }, []);
+
+  return <div className="memory-card-container">{cards}</div>;
 };
 
 export { MemoryCardContainer };
